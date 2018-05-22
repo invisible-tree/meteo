@@ -5,8 +5,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class GetWeatherInfoService {
 
+/**
+ * Service. Get weather info from API
+ */
+export class GetWeatherInfoService {
   data = {
     url: 'http://api.apixu.com/v1/forecast.json?',
     apikey: '4913ba174f374720be5220341181905',
@@ -16,9 +19,12 @@ export class GetWeatherInfoService {
 
   constructor( public network: HttpClient ) { }
 
+  /**
+   * Connects to the API. Returns and observable.
+   * @param _city
+   */
   apiCall(_city) {
     return this.network
       .get<any>( this.data.url + 'key=' + this.data.apikey + '&q=' + _city + '&lang=' + this.data.lang + '&days=' + this.data.days );
-      // .pipe(map( x => x = x.forecast.forecastday)) ;
   }
 }
