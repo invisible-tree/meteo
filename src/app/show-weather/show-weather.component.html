@@ -1,0 +1,54 @@
+<div class="intree-title">
+    <h1>
+        {{selectedCity}}
+    </h1>
+    <span><a routerLink="">- Cambiar de ciudad -</a></span>
+</div>
+
+<div class="intree-container">
+    <div class="intree-current-box">
+        <div class="date">
+            Hoy, {{currentWeather?.date.dateName}}
+            <span>{{currentWeather?.date.day}}/{{currentWeather?.date.month}}</span>
+        </div>
+        <div class="info temperature">
+            <div class="icon">
+                <img src="assets/img/tmp_white.png">
+            </div>
+            <div class="main">
+                <span class="currenttemp">{{currentWeather?.temp}}ºC</span>
+                <span class="mintemp"> {{currentWeather?.mintemp}}ºC </span>
+                <span class="maxtemp"> {{currentWeather?.maxtemp}}ºC</span>
+            </div>
+        </div>
+        <div class="info precipitations">
+            <div class="icon">
+                <img src="assets/img/precip_white.png">
+            </div>
+            <div class="main">
+                {{currentWeather?.precip}}
+                <span class="totalprecip">Total día: {{currentWeather?.totalprecip}}</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="intree-forecast-box">
+        <div class="intree-forecast-day" *ngFor="let results of forecastWeather | slice:1">
+            <div class="date">
+                {{results?.date.dateName}}
+                <span>{{results?.date.day}}/{{results?.date.month}}</span>
+            </div>
+            <div class="temp">
+                <div class="icon"><img src="assets/img/tmp.png"></div>
+
+                <span class="mintemp">{{results?.mintemp}}ºC</span>
+                <span class="maxtemp">{{results?.maxtemp}}ºC</span>
+            </div>
+
+            <div class="precip">
+                <div class="icon"><img src="assets/img/precip.png"></div>
+                <span class="precipitations">{{results?.totalprecip}} mm </span>
+            </div>
+        </div>
+    </div>
+</div>

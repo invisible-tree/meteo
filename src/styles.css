@@ -1,1 +1,230 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url('https://rsms.me/inter/inter-ui.css');
+
+body {
+    background: rgb(114, 208, 244);
+}
+
+:host {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+}
+
+:host main {
+    position: relative;
+}
+
+main router-outlet ~ * {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label{
+    color: rgb(28, 156, 205) !important;
+}
+
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: rgb(28, 156, 205) !important;
+}
+
+.intree-title {
+    width: 800px;
+    font-family: 'Inter UI', sans-serif;
+    margin: 80px auto 0;
+    text-align: center;
+}
+
+.intree-title h1 {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: rgb(28, 156, 205);
+}
+
+.intree-title span {
+    font-size: 17px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.intree-title span a {
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+}
+
+.intree-selector {
+    font-family: 'Inter UI', sans-serif;
+    width: 400px;
+    display: flex;
+    margin: 100px auto;
+    background: white;
+    box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: 20px;
+    align-items: center;
+}
+
+.intree-selector form {
+    margin: 0 auto;
+}
+
+.intree-selector form.intree-form {}
+
+.intree-container {
+    font-family: 'Inter UI', sans-serif;
+    width: 800px;
+    display: flex;
+    height: 400px;
+    margin: 50px auto;
+}
+
+.intree-current-box {
+    padding: 50px;
+    background-image: radial-gradient( circle at 60% 20%, #07ebe7 0%, #30b5eb);
+    /* radial-gradient( circle at 60% 20%, #70d1f4 0%, #1b9cce);
+    radial-gradient( circle at 60% 20%, #07ebd3 0%, #30b5eb); */
+    color: #F1F1F2;
+    box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.05);
+    position: relative;
+    width: 35%;
+    z-index: 10;
+}
+
+.intree-current-box .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.intree-current-box .info .icon {
+    padding-right: 20px;
+}
+
+.intree-current-box .info .main,
+.intree-current-box .info .main .currenttemp {
+    text-align: right;
+}
+
+.intree-container span {
+    display: block;
+    text-align: center;
+}
+
+.intree-container .intree-current-box .date {
+    text-align: right;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.intree-container .intree-current-box .date span {
+    text-align: right;
+    font-weight: normal;
+    font-size: 17px;
+}
+
+.intree-container .intree-current-box div.temperature {
+    margin: 50px auto;
+}
+
+.intree-container .intree-current-box div.precipitations .main {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.intree-container .intree-current-box div.precipitations .main span.totalprecip {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.intree-container .intree-current-box div.temperature .main .currenttemp {
+    font-size: 50px;
+    font-weight: 900;
+    margin-top: -4px;
+    padding-bottom: 0;
+}
+
+.intree-container .intree-current-box div.temperature .main .mintemp:after {
+    padding-left: 10px;
+    padding-right: 10px;
+    content: '/';
+}
+
+.intree-container .intree-current-box div.temperature .main .mintemp,
+.intree-container .intree-current-box div.temperature .main .maxtemp {
+    display: inline-block;
+    font-size: 12px;
+}
+
+.intree-forecast-box {
+    background: white;
+    height: calc(100% - 40px);
+    top: 20px;
+    position: relative;
+    width: 65%;
+    display: flex;
+    box-shadow: 0px 0px 40px 16px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.intree-forecast-box .temp,
+.intree-forecast-box .precip {
+    margin-top: 30px;
+}
+
+.intree-forecast-box .temp span .icon,
+.intree-forecast-box .precip span .icon {
+    display: block;
+}
+
+.intree-forecast-box .temp span,
+.intree-forecast-box .precip span {
+    display: inline-block;
+    font-size: 12px;
+}
+
+.intree-forecast-box .temp span.mintemp {
+    clear: both;
+}
+
+.intree-forecast-day .date {
+    text-transform: capitalize;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.intree-forecast-day .date span {
+    font-weight: normal;
+}
+
+.intree-forecast-box .temp span.mintemp:after {
+    padding-left: 4px;
+    padding-right: 4px;
+    content: '/';
+}
+
+.intree-forecast-day {
+    width: 200px;
+    padding-top: 30px;
+    border: 1px solid aliceblue;
+    color: rgb(28, 156, 205);
+}
+
+.intree-author {
+    font-family: 'Inter UI', sans-serif;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    font-size: 11px;
+}
+
+.intree-author a {
+    text-decoration: none;
+    color: white;
+}

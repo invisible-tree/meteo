@@ -1,0 +1,18 @@
+<div class="intree-title">
+    <h1>
+        Seleccione su ciudad
+    </h1>
+</div>
+<div class="intree-selector">
+    <div class="icon"><img src="assets/img/where.png"></div>
+    <form class="intree-form">
+        <mat-form-field class="intree-full-width">
+            <input type="text" placeholder="Ciudad" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (onSelectionChange)="selectLocation(option)">
+                    {{ option }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+</div>
